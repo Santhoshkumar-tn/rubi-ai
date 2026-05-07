@@ -3,7 +3,7 @@ import google.generativeai as genai
 import time
 
 # Use the Secrets you set up in Streamlit Cloud
-genai.configure(api_key=st.secrets["AIzaSyDUHLd0AB5mzReHeOfkT3PR7T9T3bu5AOY"])
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 # Use the Flash model - it's faster and has higher limits in 2026
 model = genai.GenerativeModel('gemini-2.0-flash')
