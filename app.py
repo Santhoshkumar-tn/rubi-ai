@@ -6,7 +6,7 @@ import time
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 # Use the Flash model - it's faster and has higher limits in 2026
-model = genai.GenerativeModel('gemini-2.0-flash')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 st.title("RUBI: AI CS Notes")
 topic = st.text_input("Enter Topic (e.g., Virtual Memory)")
