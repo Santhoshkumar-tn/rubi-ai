@@ -3,7 +3,7 @@ import google.generativeai as genai
 
 # Use your key from Step 1
 genai.configure(api_key="AIzaSyDUHLd0AB5mzReHeOfkT3PR7T9T3bu5AOY")
-model = genai.GenerativeModel('gemini-pro')
+model = genai.GenerativeModel('gemini-3.1-pro-preview')
 
 st.title("RUBI: AI CS Notes")
 topic = st.text_input("Enter Topic (e.g. Virtual Memory)")
