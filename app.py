@@ -1,6 +1,20 @@
 import streamlit as st
 import google.generativeai as genai
+import time # Add this at the very top of app.py
 
+if st.button("Generate"):
+    try:
+        prompt = f"Explain {topic} for {marks} marks..."
+        response = model.generate_content(prompt)
+        st.markdown(response.text)
+    except Exception as e:
+        if "429" in str(e):
+            st.error("Too many requests! Waiting 10 seconds to retry...")
+            time.sleep(10) # Wait 10 seconds
+            response = model.generate_content(prompt) # Try again
+            st.markdown(response.text)
+        else:
+            st.error(f"Error: {e}")
 # Use your key from Step 1
 genai.configure(api_key="AIzaSyDUHLd0AB5mzReHeOfkT3PR7T9T3bu5AOY")
 model = genai.GenerativeModel('gemini-2.0-flash')
